@@ -1,30 +1,16 @@
-# React + TypeScript + Vite
+# plz-noti-web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+내가 마음대로 조직하는 내 디바이스 알림
 
-Currently, two official plugins are available:
+- 옷 입기 전에 지금 날씨를 알고 싶어
+- 출근하기 직전에 내가 타는 버스 도착 정보를 알고 싶어
+- 점심 시간에 오늘 인기인 소셜 미디어 인기글 정보를 보고 싶어
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+시간 기반 + 외부 데이터 소스 알림을 쉽게 받아보기 위한 사이드 프로젝트
 
-## Expanding the ESLint configuration
+## Running the app
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+# development
+$ npm run dev
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
