@@ -8,9 +8,30 @@
 
 시간 기반 + 외부 데이터 소스 알림을 쉽게 받아보기 위한 사이드 프로젝트
 
+## Prepare
+
+### 1. HTTPS 인증서
+
+```bash
+mkcert --install
+mkcert 192.168.0.103 192.168.0.104 localhost 127.0.0.1 ::1 127.0.0.1.nip.io
+mv *-key.pem cert/cert-key.pem
+mv *.pem cert/cert.pem
+```
+
+### 2. Firebase 설정
+
+```bash
+cp .env.example .evn
+vim .env
+```
+
 ## Running the app
 
 ```bash
 # development
 $ npm run dev
+
+# run vite development server with option `--host 0.0.0.0`
+$ npm run dev:expose
 ```
