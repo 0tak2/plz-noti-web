@@ -1,0 +1,32 @@
+importScripts("https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js");
+importScripts(
+  "https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js",
+);
+
+const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: "",
+};
+
+// Initialize Firebase
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const messaging = firebase.messaging(firebaseApp);
+
+messaging.onBackgroundMessage(function (payload) {
+  console.log(
+    "[firebase-messaging-sw.js] Received background message ",
+    payload,
+  );
+
+  self.registration.showNotification(payload.notification.title, {
+    body: payload.notification.body,
+  });
+});
+
+console.log("[firebase-messaging-sw.js] init messaging worker finished");
